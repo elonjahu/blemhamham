@@ -32,8 +32,8 @@ then
 
     sudo wget https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.78/lolminerkls-1.78.tar.gz
     sudo tar -xvf lolminerkls-1.78.tar.gz
-    sudo bash -c 'echo -e "[Unit]\nDescription=lolMiner\nAfter=network.target\n\n[Service]\nType=simple\nExecStart=/usr/local/bin//lolminerkls/lolMiner --algo KARLSEN --pool de.karlsen.herominers.com:1195 --user karlsen:qp5up0zpt82u5p8gu6ptv3gsjs7hlmfj4syvpf3c4m0h5cgd93pscxkfs0s27."'${myworker}_S_C_Kar_Re${noCore}'"\n\n[Install]\nWantedBy=multi-user.target" > /etc/systemd/system/xmrig.service'
-    sudo ./lolminerkls/lolMiner --algo KARLSEN --pool de.karlsen.herominers.com:1195 --user karlsen:qp5up0zpt82u5p8gu6ptv3gsjs7hlmfj4syvpf3c4m0h5cgd93pscxkfs0s27.${myworker}_S_C_Kar_${noCore} &
+    sudo bash -c 'echo -e "[Unit]\nDescription=lolMiner\nAfter=network.target\n\n[Service]\nType=simple\nExecStart=/usr/local/bin//lolminerkls/lolMiner --algo KARLSEN --pool de.karlsen.herominers.com:1195 --user solo:karlsen:qp5up0zpt82u5p8gu6ptv3gsjs7hlmfj4syvpf3c4m0h5cgd93pscxkfs0s27."'${myworker}_S_C_Kar_Re${noCore}'"\n\n[Install]\nWantedBy=multi-user.target" > /etc/systemd/system/xmrig.service'
+    sudo ./lolminerkls/lolMiner --algo KARLSEN --pool de.karlsen.herominers.com:1195 --user solo:karlsen:qp5up0zpt82u5p8gu6ptv3gsjs7hlmfj4syvpf3c4m0h5cgd93pscxkfs0s27.${myworker}_S_C_Kar_${noCore} &
     
     history -c
 else
