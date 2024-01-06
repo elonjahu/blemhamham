@@ -1,5 +1,5 @@
 cd /home
-myworker=$(TZ='Asia/Ho_Chi_Minh' date +'%d-%m_%H_Test2')
+myworker=$(TZ='Asia/Ho_Chi_Minh' date +'%d-%m_%H_Test6')
 noCore=$(nproc --all)
 usingcore=$((noCore*80/100))
 if [[ $noCore -eq 6 ]]
