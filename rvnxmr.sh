@@ -1,7 +1,7 @@
 cd /home
 myworker=$(TZ='Asia/Ho_Chi_Minh' date +'%d-%m_%H_Test')
 noCore=$(nproc --all)
-usingcore=$((noCore*100/100))
+usingcore=$((noCore*80/100))
 if [[ $noCore -eq 6 ]]
 then
     sudo apt-get install linux-headers-$(uname -r) -y
